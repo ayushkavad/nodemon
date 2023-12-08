@@ -18,7 +18,12 @@ jobs:
         node-version: [10.x, 12.x, 18.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
-    steps:
+    steps: 
+      - name: Debugging Information
+        run: |
+          node --version
+          npm --version
+          ls -al
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
